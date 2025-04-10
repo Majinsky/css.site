@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind - CSS Фреймворки</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">CSS Фреймворки</a>
+            <a role="button" class="navbar-burger" aria-label="menu" data-target="navbarMenu">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">Главная</a>
+                <a class="navbar-item" href="about.html">О фреймворках</a>
+                <a class="navbar-item" href="bulma.html">Bulma</a>
+                <a class="navbar-item" href="bootstrap.html">Bootstrap</a>
+                <a class="navbar-item" href="tailwind.html">Tailwind</a>
+                <a class="navbar-item" href="comparison.html">Сравнение</a>
+                <a class="navbar-item" href="guides.html">Руководства</a>
+                <a class="navbar-item" href="videos.html">Видео</a>
+                <a class="navbar-item" href="contacts.html">Контакты</a>
+                <a class="navbar-item" href="blog.html">Блог</a>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-3">
+                    <aside class="menu">
+                        <p class="menu-label">Фреймворки</p>
+                        <ul class="menu-list">
+                            <li><a href="bulma.html">Bulma</a></li>
+                            <li><a href="bootstrap.html">Bootstrap</a></li>
+                            <li><a class="is-active" href="tailwind.html">Tailwind CSS</a></li>
+                            <li><a href="comparison.html">Сравнение</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="column is-9">
+                    <h1 class="title">Tailwind: Утилиты прежде всего</h1>
+                    <p class="subtitle">Обзор возможностей</p>
+                    <div class="content">
+                        <p>Tailwind CSS — CSS-фреймворк с открытым исходным кодом, созданный Адамом Уэтеном и поддерживаемый Tailwind Labs. Особенность этой библиотеки в том, что, она не предопределяет CSS-классы отдельных элементов. Вместо этого она предоставляет служебные классы, которые можно объединять для стилизации каждого элемента.
+По состоянию на 30 мая 2024 года Tailwind CSS имеет более 79 тысяч звезд на GitHub, что делает его одним из самых популярных CSS фреймворков и GitHub репозиториев.</p>
+                        <figure class="image is-4by3">
+                            <img src="https://miro.medium.com/v2/resize:fit:1400/1*__f27S-qQF2CAASt5bOwqg.png" alt="Tailwind">
+                        </figure>
+                        <table class="table is-striped is-fullwidth">
+                            <thead><tr><th>Характеристика</th><th>Описание</th></tr></thead>
+                            <tbody>
+                                <tr><td>Размер</td><td>~300 KB</td></tr>
+                                <tr><td>Адаптивность</td><td>Utility-классы</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2025 CSS Фреймворки. Все права защищены.</p>
+            <p><a href="contacts.html">Контакты</a> | <a href="about.html">О проекте</a></p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
